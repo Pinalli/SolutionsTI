@@ -45,9 +45,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menServ = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         menSobre = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        menAjuda = new javax.swing.JMenuItem();
         menSair = new javax.swing.JMenu();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        menSai = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema Ordem de Serviço  - SolutionTI");
@@ -90,11 +90,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem3.setText("Usuários");
+        jMenuItem3.setEnabled(false);
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         menCad.add(jMenuItem3);
 
         Menu.add(menCad);
 
         menServ.setText("Relatório");
+        menServ.setEnabled(false);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem4.setText("Serviços");
@@ -104,9 +111,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         menSobre.setText("Ajuda");
 
-        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem5.setText("Sobre");
-        menSobre.add(jMenuItem5);
+        menAjuda.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, java.awt.event.InputEvent.ALT_MASK));
+        menAjuda.setText("Sobre");
+        menAjuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menAjudaActionPerformed(evt);
+            }
+        });
+        menSobre.add(menAjuda);
 
         Menu.add(menSobre);
 
@@ -117,14 +129,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem6.setText("Sair");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+        menSai.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
+        menSai.setText("Sair");
+        menSai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
+                menSaiActionPerformed(evt);
             }
         });
-        menSair.add(jMenuItem6);
+        menSair.add(menSai);
 
         Menu.add(menSair);
 
@@ -170,12 +182,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+    private void menSaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menSaiActionPerformed
          int sair = JOptionPane.showConfirmDialog(null,"Tem certeza que deseja sair?", "Atenção!",JOptionPane.YES_NO_OPTION);
          if(sair == JOptionPane.YES_OPTION){
-             System.exit(0); //Encerra o sistema
-         }
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
+            System.exit(0); //Encerra o sistema
+        }
+    }//GEN-LAST:event_menSaiActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         //Substituem a label data lblData pela data do sistema ao inicializar o form
@@ -187,8 +199,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void menSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menSairActionPerformed
                //Exibe a caixa de diálogo
-             
+                  int sair = JOptionPane.showConfirmDialog(null,"Tem certeza que deseja sair?", "Atenção!",JOptionPane.YES_NO_OPTION);
+         if(sair == JOptionPane.YES_OPTION){
+             System.exit(0); //Encerra o sistema
+         } 
     }//GEN-LAST:event_menSairActionPerformed
+
+    private void menAjudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menAjudaActionPerformed
+      //chama a tela sobre
+      TelaSobre sobre = new TelaSobre();
+      sobre.setVisible(true);//dispose para fechae somente a tela sobre
+    }//GEN-LAST:event_menAjudaActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,16 +254,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
+    public static javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JLabel lblData;
     private javax.swing.JLabel lblUsuario;
+    private javax.swing.JMenuItem menAjuda;
     private javax.swing.JMenu menCad;
     private javax.swing.JMenuItem menCadUser;
+    private javax.swing.JMenuItem menSai;
     private javax.swing.JMenu menSair;
-    private javax.swing.JMenu menServ;
+    public static javax.swing.JMenu menServ;
     private javax.swing.JMenu menSobre;
     // End of variables declaration//GEN-END:variables
 }
