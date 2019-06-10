@@ -41,8 +41,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menCad = new javax.swing.JMenu();
         menCadUser = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        menServ = new javax.swing.JMenu();
+        menCadUsu = new javax.swing.JMenuItem();
+        menRel = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         menSobre = new javax.swing.JMenu();
         menAjuda = new javax.swing.JMenuItem();
@@ -51,7 +51,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema Ordem de Serviço  - SolutionTI");
-        setPreferredSize(new java.awt.Dimension(915, 523));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
@@ -88,26 +87,26 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem2.setText("OS");
         menCad.add(jMenuItem2);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem3.setText("Usuários");
-        jMenuItem3.setEnabled(false);
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        menCadUsu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
+        menCadUsu.setText("Usuários");
+        menCadUsu.setEnabled(false);
+        menCadUsu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                menCadUsuActionPerformed(evt);
             }
         });
-        menCad.add(jMenuItem3);
+        menCad.add(menCadUsu);
 
         Menu.add(menCad);
 
-        menServ.setText("Relatório");
-        menServ.setEnabled(false);
+        menRel.setText("Relatório");
+        menRel.setEnabled(false);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem4.setText("Serviços");
-        menServ.add(jMenuItem4);
+        menRel.add(jMenuItem4);
 
-        Menu.add(menServ);
+        Menu.add(menRel);
 
         menSobre.setText("Ajuda");
 
@@ -211,9 +210,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
       sobre.setVisible(true);//dispose para fechae somente a tela sobre
     }//GEN-LAST:event_menAjudaActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void menCadUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menCadUsuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_menCadUsuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -254,16 +253,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuItem jMenuItem2;
-    public static javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JLabel lblData;
-    private javax.swing.JLabel lblUsuario;
+    public static javax.swing.JLabel lblUsuario;
     private javax.swing.JMenuItem menAjuda;
     private javax.swing.JMenu menCad;
     private javax.swing.JMenuItem menCadUser;
+    public static javax.swing.JMenuItem menCadUsu;
+    public static javax.swing.JMenu menRel;
     private javax.swing.JMenuItem menSai;
     private javax.swing.JMenu menSair;
-    public static javax.swing.JMenu menServ;
     private javax.swing.JMenu menSobre;
     // End of variables declaration//GEN-END:variables
 }

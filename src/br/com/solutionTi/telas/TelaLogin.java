@@ -1,6 +1,7 @@
 package br.com.solutionTi.telas;
 
 import br.com.solutionsTi.dal.ConnectionBD;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -39,12 +40,25 @@ public class TelaLogin extends javax.swing.JFrame {
             pst.setString(1, txtUsuario.getText());
             pst.setString(2, txtSenha.getText());
             rs = pst.executeQuery();//executa a query
-
+            
             if (rs.next()) {
+                String perfil = rs.getString(6);//obtem o conteudo do campo perfil da tbusuarios
+                if( perfil.equalsIgnoreCase("admin")){   // System.out.println(perfil);
                 TelaPrincipal principal = new TelaPrincipal();
                 principal.setVisible(true);//abre o formulario tela principal
+                TelaPrincipal.menRel.setEnabled(true);
+                TelaPrincipal.menCadUsu.setEnabled(true);
+                TelaPrincipal.lblUsuario.setText(rs.getString(2));
+                TelaPrincipal.lblUsuario.setForeground(Color.red);
                 this.dispose();//fecha ao chamr o formulária da tela principal
-                conexao.close();
+                }
+                else{
+                    TelaPrincipal principal = new TelaPrincipal();
+                       principal.setVisible(true);
+                        TelaPrincipal.lblUsuario.setText(rs.getString(2));
+                         TelaPrincipal.lblUsuario.setForeground(Color.red);
+                        this.dispose();
+                }
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos");
             }
@@ -53,6 +67,7 @@ public class TelaLogin extends javax.swing.JFrame {
             
             JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos");
         }
+        // conexao.close();
     }
 
     /**
