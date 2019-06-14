@@ -1,7 +1,7 @@
 package br.com.solutionTi.telas;
 
 /**
- * Wendesday
+ * Wendesday, june 12 2019
  *
  * @author AlbertoRochaPinalli
  */
@@ -331,10 +331,10 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
                     .addComponent(btnUsoEditar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnUsoExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnUsoAdd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setBounds(0, 0, 639, 482);
+        setBounds(0, 0, 639, 475);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUsoAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsoAddActionPerformed
