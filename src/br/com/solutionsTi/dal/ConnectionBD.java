@@ -13,7 +13,7 @@ public class ConnectionBD {
     public static Connection getConnection() {
         java.sql.Connection conexao = null;
         String driver = "com.mysql.jdbc.Driver";//chama o driver
-        String url = "jdbc:mysql://localhost:3306/bdti";//aramzena informações do banco
+        String url = "jdbc:mysql://localhost:3306/bdti";//armazena informações do banco
         String user = "root";
         String password = "";
         //estabelece a conexaoo
