@@ -41,7 +41,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Menu = new javax.swing.JMenuBar();
         menCad = new javax.swing.JMenu();
         menCadCli = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        menCadOS = new javax.swing.JMenuItem();
         menCadUsu = new javax.swing.JMenuItem();
         menRel = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
@@ -91,9 +91,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         menCad.add(menCadCli);
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_MASK));
-        jMenuItem2.setText("OS");
-        menCad.add(jMenuItem2);
+        menCadOS.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_MASK));
+        menCadOS.setText("OS");
+        menCadOS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menCadOSActionPerformed(evt);
+            }
+        });
+        menCad.add(menCadOS);
 
         menCadUsu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
         menCadUsu.setText("Usuários");
@@ -182,10 +187,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addComponent(lblData)
                         .addGap(76, 76, 76)
                         .addComponent(jLabel3)))
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(943, 579));
+        setSize(new java.awt.Dimension(943, 567));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -230,6 +235,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
           Desktop.add(cliente);
     }//GEN-LAST:event_menCadCliActionPerformed
 
+    private void menCadOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menCadOSActionPerformed
+        
+	TelaOS os = new TelaOS();
+	os.setVisible(true);
+	Desktop.add(os);
+    }//GEN-LAST:event_menCadOSActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -268,13 +280,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar Menu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JLabel lblData;
     public static javax.swing.JLabel lblUsuario;
     private javax.swing.JMenuItem menAjuda;
     private javax.swing.JMenu menCad;
     private javax.swing.JMenuItem menCadCli;
+    private javax.swing.JMenuItem menCadOS;
     public static javax.swing.JMenuItem menCadUsu;
     public static javax.swing.JMenu menRel;
     private javax.swing.JMenuItem menSai;
